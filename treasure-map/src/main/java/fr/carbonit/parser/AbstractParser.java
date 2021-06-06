@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 
 @AllArgsConstructor
-public abstract class GenericParser<T extends TreasureMapObject> {
+public abstract class AbstractParser<T extends TreasureMapObject> {
     protected static final String LINE_SEPARATOR = " - ";
     private final int numberOfParameters;
 

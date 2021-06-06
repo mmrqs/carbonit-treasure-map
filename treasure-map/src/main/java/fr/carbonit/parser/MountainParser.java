@@ -5,7 +5,7 @@ import fr.carbonit.model.Mountain;
 import fr.carbonit.parser.exception.NumberOfArgumentException;
 import lombok.NonNull;
 
-public class MountainParser extends GenericParser<Mountain> {
+public class MountainParser extends AbstractParser<Mountain> {
     private static final int NUMBER_OF_PARAMETERS = 3;
 
     public MountainParser() {

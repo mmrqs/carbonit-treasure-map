@@ -5,7 +5,7 @@ import fr.carbonit.model.Treasure;
 import fr.carbonit.parser.exception.NumberOfArgumentException;
 import lombok.NonNull;
 
-public class TreasureParser extends GenericParser<Treasure> {
+public class TreasureParser extends AbstractParser<Treasure> {
     private static final int NUMBER_OF_PARAMETERS = 4;
 
     public TreasureParser() {

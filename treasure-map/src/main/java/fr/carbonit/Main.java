@@ -1,5 +1,7 @@
 package fr.carbonit;
 
+import fr.carbonit.checker.GameParserChecker;
+import fr.carbonit.checker.exception.CheckException;
 import fr.carbonit.model.TreasureMapObject;
 import fr.carbonit.parser.GameParser;
 import fr.carbonit.parser.exception.ParserException;
@@ -16,7 +18,11 @@ public class Main {
         input = args[0];
         try {
             List<TreasureMapObject> components = new GameParser().parseFile(input);
-        } catch (ParserException e) {
+
+            GameParserChecker checker = new GameParserChecker(components);
+            checker.checkData();
+
+        } catch (ParserException | CheckException e) {
             e.printStackTrace();
         }
     }

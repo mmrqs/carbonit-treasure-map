@@ -5,7 +5,7 @@ import fr.carbonit.model.Coordinates;
 import fr.carbonit.parser.exception.NumberOfArgumentException;
 import lombok.NonNull;
 
-public class BoardParser extends GenericParser<Board> {
+public class BoardParser extends AbstractParser<Board> {
     private static final int NUMBER_OF_PARAMETERS = 3;
 
     public BoardParser() {

@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.stream.Collectors;
 
-public class AdventurerParser extends GenericParser<Adventurer> {
+public class AdventurerParser extends AbstractParser<Adventurer> {
     private static final int NUMBER_OF_PARAMETERS = 6;
 
     public AdventurerParser() {

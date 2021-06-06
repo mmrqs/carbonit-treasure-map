@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class GameParser {
 
-    @NonNull private final Map<TreasureMapObjectType, GenericParser> parsers;
+    @NonNull private final Map<TreasureMapObjectType, AbstractParser> parsers;
 
     public GameParser() {
         parsers = Map.of(
