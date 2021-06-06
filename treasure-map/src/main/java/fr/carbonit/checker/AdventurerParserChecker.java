@@ -20,7 +20,7 @@ public class AdventurerParserChecker extends AbstractParserChecker<Adventurer> {
 
     @NonNull private final List<Mountain> mountains;
     @NonNull private final Board board;
-    
+
     private GameConsistencyError isAdventurerInTheMap(@NonNull Adventurer adventurer) {
         return !board.isObjectWithinBoard(adventurer.getCoordinates())
                 ? new GameConsistencyError(new IllegalPositionException(adventurer))
