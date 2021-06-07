@@ -11,7 +11,8 @@ public enum TreasureMapObjectType {
     BOARD('C'),
     TREASURE('T'),
     ADVENTURER('A'),
-    MOUNTAIN('M');
+    MOUNTAIN('M'),
+    COMMENTS('#');
 
     @Getter
     private final char label;

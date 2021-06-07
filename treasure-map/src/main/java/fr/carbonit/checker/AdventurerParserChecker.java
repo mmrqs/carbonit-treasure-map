@@ -27,7 +27,7 @@ public class AdventurerParserChecker extends AbstractParserChecker<Adventurer> {
                 : null;
     }
 
-    private GameConsistencyError isAdventurerInMountain(@NonNull Adventurer adventurer) {
+    private GameConsistencyError isAdventurerInIllegalSpot(@NonNull Adventurer adventurer) {
         return mountains.stream()
                 .filter(obj -> obj.getCoordinates().equals(adventurer.getCoordinates()))
                 .count() != 0
@@ -48,7 +48,7 @@ public class AdventurerParserChecker extends AbstractParserChecker<Adventurer> {
     @Override
     public List<Optional<GameConsistencyError>> checkOrThrow(@NonNull Adventurer subject) {
         return Arrays.asList(Optional.ofNullable(isAdventurerInTheMap(subject)),
-                Optional.ofNullable(isAdventurerInMountain(subject)),
+                Optional.ofNullable(isAdventurerInIllegalSpot(subject)),
                 Optional.ofNullable(isThereAdventurersWithSameName(subject)));
     }
 }

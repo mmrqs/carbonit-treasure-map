@@ -6,9 +6,7 @@ import lombok.Setter;
 
 @Getter
 public abstract class TreasureMapObject {
-    @NonNull @Setter
-    private final Coordinates coordinates;
-
+    @NonNull @Getter @Setter private Coordinates coordinates;
     @NonNull private final TreasureMapObjectType type;
 
     public TreasureMapObject(

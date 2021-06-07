@@ -6,10 +6,12 @@ import lombok.Setter;
 
 import java.util.Queue;
 
+@Getter
 public class Adventurer extends TreasureMapObject {
-    @NonNull @Getter final String name;
+    @NonNull final String name;
     @NonNull @Setter private OrientationEnum orientation;
-    @NonNull private final Queue<MovementEnum> moves;
+    @NonNull private Queue<MovementEnum> moves;
+    @NonNull private int treasureCount;
 
     public Adventurer(
             @NonNull String name,
@@ -20,5 +22,10 @@ public class Adventurer extends TreasureMapObject {
         this.name = name;
         this.orientation = orientation;
         this.moves = moves;
+        this.treasureCount = 0;
+    }
+
+    public void pickupTreasure() {
+        this.treasureCount++;
     }
 }

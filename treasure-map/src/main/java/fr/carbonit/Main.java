@@ -2,6 +2,8 @@ package fr.carbonit;
 
 import fr.carbonit.checker.GameParserChecker;
 import fr.carbonit.checker.exception.CheckException;
+import fr.carbonit.game.GameManager;
+import fr.carbonit.game.TreasureMap;
 import fr.carbonit.model.TreasureMapObject;
 import fr.carbonit.parser.GameParser;
 import fr.carbonit.parser.exception.ParserException;
@@ -22,6 +24,8 @@ public class Main {
             GameParserChecker checker = new GameParserChecker(components);
             checker.checkData();
 
+            GameManager gameManager = new GameManager(components);
+            TreasureMap map = gameManager.playGame();
         } catch (ParserException | CheckException e) {
             e.printStackTrace();
         }

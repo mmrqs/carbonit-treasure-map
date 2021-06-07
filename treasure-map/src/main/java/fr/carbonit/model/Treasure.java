@@ -1,5 +1,6 @@
 package fr.carbonit.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 
@@ -12,5 +13,9 @@ public class Treasure extends TreasureMapObject {
             @NonNull int nb) {
         super(coordinates, TreasureMapObjectType.TREASURE);
         this.quantity = nb;
+    }
+
+    public void collected() {
+        quantity--;
     }
 }

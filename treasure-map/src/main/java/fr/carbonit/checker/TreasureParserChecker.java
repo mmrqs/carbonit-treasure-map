@@ -22,7 +22,7 @@ public class TreasureParserChecker extends AbstractParserChecker<Treasure> {
     }
 
     public GameConsistencyError isTreasureNumberCorrect(Treasure treasure) {
-        return treasure.getQuantity() < 0
+        return treasure.getQuantity() <= 0
                 ? new GameConsistencyError(new IllegalTreasureNumberException(treasure))
                 : null;
     }
