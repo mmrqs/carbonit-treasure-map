@@ -13,6 +13,7 @@ public class TreasureMap {
 
     @Getter
     private final List<TreasureMapObject> map;
+    @Getter
     private final Board board;
 
     public TreasureMap(@NonNull Board board) {
@@ -52,7 +53,8 @@ public class TreasureMap {
 
     public boolean isCaseAvailable(@NonNull Coordinates coordinates) {
         List<TreasureMapObject> result = getObjectInMap(coordinates);
-        return (result.size() == 0 || result.size() == 1 && result.get(0).getType() == TreasureMapObjectType.TREASURE)
+        return (result.size() == 0 ||
+                (result.size() == 1 && result.get(0).getType() == TreasureMapObjectType.TREASURE))
                 && this.board.isObjectWithinBoard(coordinates);
     }
 }

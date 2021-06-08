@@ -16,7 +16,6 @@ public abstract class AbstractParser<T extends TreasureMapObject> {
         String[] result = line.split(LINE_SEPARATOR);
         if(result.length != numberOfParameters)
             throw new NumberOfArgumentException(numberOfParameters, result.length);
-
         return result;
     }
 }

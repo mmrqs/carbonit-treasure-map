@@ -1,6 +1,5 @@
 package fr.carbonit.model;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 

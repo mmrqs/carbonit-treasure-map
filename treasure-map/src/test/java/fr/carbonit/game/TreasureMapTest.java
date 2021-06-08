@@ -106,7 +106,6 @@ public class TreasureMapTest {
         Assertions.assertThrows(
                 UnremovableItemException.class,
                 () -> treasureMap.removeObject(unremovableObject));
-
     }
 
     @Test

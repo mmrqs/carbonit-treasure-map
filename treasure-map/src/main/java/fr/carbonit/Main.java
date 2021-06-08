@@ -7,8 +7,10 @@ import fr.carbonit.game.TreasureMap;
 import fr.carbonit.model.TreasureMapObject;
 import fr.carbonit.parser.GameParser;
 import fr.carbonit.parser.exception.ParserException;
+import fr.carbonit.writer.GameWriter;
 import lombok.NonNull;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,7 +28,10 @@ public class Main {
 
             GameManager gameManager = new GameManager(components);
             TreasureMap map = gameManager.playGame();
-        } catch (ParserException | CheckException e) {
+
+            GameWriter writer = new GameWriter(map.getMap(), map.getBoard());
+            writer.writeOutputFile(FILE_NAME);
+        } catch (ParserException | CheckException | IOException e) {
             e.printStackTrace();
         }
     }
